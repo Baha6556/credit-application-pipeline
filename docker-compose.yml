@@ -17,7 +17,7 @@ services:
       POSTGRES_PASSWORD: credit
       POSTGRES_DB: credit
     ports:
-      - "5432:5432"
+      - "5433:5432"   # 5433 снаружи, чтобы не конфликтовать с локальным Postgres
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U credit -d credit"]
       interval: 5s
