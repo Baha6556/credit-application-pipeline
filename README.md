@@ -81,7 +81,7 @@ docker compose exec postgres psql -U credit -d credit \
 
 ```bash
 python -m venv .venv
-.venv\Scripts\activate        # линукс/мак: source .venv/bin/activate
+.venv\Scripts\activate        
 pip install -r requirements.txt
 pytest -v
 ```
