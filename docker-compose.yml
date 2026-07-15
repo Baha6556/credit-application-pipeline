@@ -16,8 +16,9 @@ services:
       POSTGRES_USER: credit
       POSTGRES_PASSWORD: credit
       POSTGRES_DB: credit
-    ports:
-      - "5433:5432"   # 5433 снаружи, чтобы не конфликтовать с локальным Postgres
+    # порт наружу не пробрасываем: 5432 на хосте часто занят локальным Postgres,
+    # а api/worker ходят в БД по внутренней сети compose
+
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U credit -d credit"]
       interval: 5s
